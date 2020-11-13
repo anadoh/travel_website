@@ -11,6 +11,90 @@ html {
     font-size: 62.5%;
 }
 
+.spinner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circles {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+}
+
+.circles div {
+    animation: circles 1.2s cubic-bezier(.5,0,.5,1) infinite;
+}
+
+.circles div::after {
+    content:"";
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    background-color: orange;
+}
+
+.circles div:nth-child(1)::after {
+    top: 6.3rem;
+    left: 6.3rem;
+}
+
+.circles div:nth-child(2)::after {
+    top: 6.8rem;
+    left: 5.6rem;
+}
+
+.circles div:nth-child(3)::after {
+    top: 7.1rem;
+    left: 4.8rem;
+}
+
+.circles div:nth-child(4)::after {
+    top: 7.2rem;
+    left: 4rem;
+}
+
+.circles div:nth-child(5)::after {
+    top: 7.1rem;
+    left: 3.2rem;
+}
+
+.circles div:nth-child(6)::after {
+    top: 6.8rem;
+    left: 2.4rem;
+}
+
+.circles div:nth-child(7)::after {
+    top: 6.3rem;
+    left: 1.7rem;
+}
+
+.circles div:nth-child(8)::after {
+    top: 5.6rem;
+    left: 1.2rem;
+}
+
+@keyframes circles {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg );
+    }
+}
+
+.container {
+    display: none;
+}
+
 .header {
     width: 100%;
     height: 100vh;
@@ -39,7 +123,7 @@ html {
 
 .line {
     width: 100%;
-    height: .2rem;
+    height: .1rem;
     background-color: white;
     box-shadow: 0 0.1rem 0.2rem black 
 }
@@ -504,4 +588,310 @@ html {
     color: black;
     margin-bottom: 5rem;
     text-align: center;
+}
+
+.contact-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    position: relative;
+}
+
+.field {
+    width: 45rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.3rem dashed grey;
+    margin: 3rem 0;
+    padding: 1rem 1rem 1rem 0;
+    font-family: 'Muli', serif;
+    font-size: 1.6rem;
+    color: grey;
+}
+
+.input-group input {
+    height: 4rem;
+}
+
+.input-group textarea {
+     max-height: 7rem;
+     max-width: 45rem;
+}
+
+.field:focus {
+    border-bottom-style: solid;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    font-family: 'Baloo Da 2', serif;
+    font-size: 1.8rem;
+    color: grey;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: all .3s;
+}
+
+.input-label {
+    bottom: 3rem;
+}
+
+.message {
+    bottom: 6rem;
+}
+
+.field:focus ~ label {
+    transform: translateY(-3rem);
+    font-size: 1.2rem;
+}
+
+.submit-btn {
+    width: 45rem;
+    height: 5rem;
+    background-color: orange;
+    border: none;
+    margin-top:2rem;
+    font-family: 'Muli', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    cursor: pointer;
+    text-shadow: 0 .1rem .3rem black;
+    box-shadow: 0 .1rem .3rem black;
+}
+
+.footer {
+    width: 100%;
+    height: 15rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-family: 'Baloo Da 2', serif;
+    font-size: 1.4rem;
+    color: darkgray;
+}
+
+.social-list a {
+    margin: 0 1.5rem;
+}
+
+.social-list i {
+    font-size: 2.5rem;
+    color: whitesmoke;
+}
+
+.scroll-btn {
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 .1rem .3rem black;
+    border-radius: 0.3rem;
+}
+
+@media(max-width:1500px){
+    .about-us-img-wrapper {
+        grid-row: 1 / -1;
+    }
+
+    .card {
+        width: 34rem;
+    }
+
+    .contact-wrapper {
+        width: 80%;
+        height: 65rem;
+    }
+
+    .footer-content {
+        width: 80%;
+    }
+}
+
+@media(max-width:1400px){
+    .banner h1 {
+        font-size: 6rem;
+        line-height: 7rem;
+    }
+
+    .banner p{
+        font-size: 3rem;
+    }
+
+    .banner button {
+        width: 20rem;
+        height: 5rem;
+        font-size: 1.6rem;
+    }
+
+    .menu-link {
+        font-size: 3rem;
+    }
+
+    .service:nth-child(1) {
+        grid-column: 3/7;
+        grid-row: 1/3;
+    }
+    
+    .service:nth-child(2) {
+        grid-column: 2/6;
+        grid-row: 3/5;
+    }
+    
+    .service:nth-child(3) {
+        grid-column: 3/7;
+        grid-row: 5/-1;
+    }
+    
+    .service:nth-child(4) {
+        grid-column: 11/15;
+        grid-row: 1/3;
+    }
+    
+    .service:nth-child(5) {
+        grid-column: 12/16;
+        grid-row: 3/5;
+    }
+    
+    .service:nth-child(6) {
+        grid-column: 11/1415;
+        grid-row: 5/-1;
+    }
+}
+
+@media(max-width:1100px){
+    .team {
+        padding-bottom: 10rem;
+    }
+
+    .cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    } 
+
+    .card {
+        margin-bottom: 8rem;
+    }
+
+    .contact-wrapper {
+        width: 90%;
+        height: 55rem;
+    }
+
+    .contact-heading {
+        margin-bottom: 2rem;
+    }
+
+    .field {
+        margin: 2rem 0;
+    }
+}
+
+@media(max-width: 900px) {
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 40rem;
+        margin-bottom: 6rem;
+    }
+
+    .about-us-img-wrapper {
+        width: 40rem;
+    }
+
+    .about-us-img-wrapper img {
+        width: 100%;
+    }
+
+    .contact-left {
+        width: 0;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+    }
+
+    .copyright {
+        order: 1;
+        margin-top: 3rem;
+    }
+
+}
+
+@media(max-width: 600px) {
+    html {
+        font-size: 45%
+    }
+
+    .banner h1 {
+        font-size: 4.5rem;
+        line-height: 5rem;
+    }
+
+    .banner p {
+        font-size: 2.5rem;
+    }
+
+    .sidebar {
+        width: 65%;
+        right: -100%;
+    }
+
+    .change .hamburger-menu {
+        right: 25rem;
+    }
+
+    .service {
+        width: 30rem;
+    }
+
+    .field {
+        width: 35rem;
+    }
+
+    .input-group textarea {
+        max-width: 35rem;
+    }
+
+    .submit-btn {
+        width: 35rem;
+    }
+
 }
