@@ -1,6 +1,6 @@
 window.onload = () => {
     setTimeout(() => {
-        document.querySelector('body').classList.add('display')
+        document.querySelector('body').classList.add('display');
     }, 2000);
 };
 
