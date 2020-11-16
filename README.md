@@ -5,7 +5,7 @@ Example website of Travel Website
 Photos thanks from (https://unsplash.com/)
 
 ## Online DEMO
-https://anadoh.github.io/travel_website
+https://anadoh.github.io/travel_website/
 
 ## Technologies
 * HTML 
